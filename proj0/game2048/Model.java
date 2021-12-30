@@ -111,6 +111,7 @@ public class Model extends Observable {
         changed = false;
         boolean merged;
         merged = false;
+        this.board.setViewingPerspective(side);
         // first move
         for (int j = 0; j < this.board.size(); j++) {
             for (int i = this.board.size() - 1; i > 0; i--) {
@@ -141,6 +142,7 @@ public class Model extends Observable {
                 }
             }
         }
+        this.board.setViewingPerspective(Side.NORTH);
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
 
