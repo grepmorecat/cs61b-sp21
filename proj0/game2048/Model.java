@@ -121,6 +121,22 @@ public class Model extends Observable {
                 }
             }
         }
+        for (int j = 0; j < this.board.size(); j++) {
+            for (int i = this.board.size() - 1; i > 0; i--) {
+                if (this.board.tile(j, i) == null && this.board.tile(j, i - 1) != null) {
+                    this.board.move(j, i, this.board.tile(j, i - 1));
+                    changed = true;
+                }
+            }
+        }
+        for (int j = 0; j < this.board.size(); j++) {
+            for (int i = this.board.size() - 1; i > 0; i--) {
+                if (this.board.tile(j, i) == null && this.board.tile(j, i - 1) != null) {
+                    this.board.move(j, i, this.board.tile(j, i - 1));
+                    changed = true;
+                }
+            }
+        }
         // merge
         for (int j = 0; j < this.board.size(); j++) {
             for (int i = this.board.size() - 1; i > 0; i--) {
@@ -134,6 +150,20 @@ public class Model extends Observable {
             }
         }
         if (merged) {
+            for (int j = 0; j < this.board.size(); j++) {
+                for (int i = this.board.size() - 1; i > 0; i--) {
+                    if (this.board.tile(j, i) == null && this.board.tile(j, i - 1) != null) {
+                        this.board.move(j, i, this.board.tile(j, i - 1));
+                    }
+                }
+            }
+            for (int j = 0; j < this.board.size(); j++) {
+                for (int i = this.board.size() - 1; i > 0; i--) {
+                    if (this.board.tile(j, i) == null && this.board.tile(j, i - 1) != null) {
+                        this.board.move(j, i, this.board.tile(j, i - 1));
+                    }
+                }
+            }
             for (int j = 0; j < this.board.size(); j++) {
                 for (int i = this.board.size() - 1; i > 0; i--) {
                     if (this.board.tile(j, i) == null && this.board.tile(j, i - 1) != null) {
